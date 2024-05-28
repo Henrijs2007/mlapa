@@ -1,0 +1,171 @@
+:root {
+    --color-primary: #1e3a8a;
+    --color-secondary: #2563eb;
+    --color-accent: #3b82f6;
+    --color-background: #111827;
+    --color-background-light: rgba(255, 255, 255, 0.1);
+    --color-text: #f4f4f9;
+    --color-text-dark: #333;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--color-background);
+    color: var(--color-text);
+}
+
+.container {
+    width: 85%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: var(--color-primary);
+    color: var(--color-text);
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    transition: opacity 1s ease-in-out; /* Fade-in effect */
+}
+
+header.loaded {
+    opacity: 1; /* When loaded */
+}
+
+header.small {
+    padding: 10px 0;
+    background: var(--color-primary);
+}
+
+header .logo {
+    height: 50px;
+    margin-left: 20px;
+    transition: height 0.3s ease-in-out;
+}
+
+header.small .logo {
+    height: 40px;
+}
+
+header nav {
+    margin-top: 0;
+}
+
+header ul {
+    padding: 0;
+    list-style: none;
+}
+
+header li {
+    display: inline;
+    padding: 0 20px;
+}
+
+header a {
+    color: var(--color-text);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
+}
+
+header a:hover {
+    color: var(--color-accent);
+}
+
+.showcase {
+    min-height: 100vh;
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary)), url('insert me') no-repeat center center/cover;
+    text-align: center;
+    color: var(--color-text);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 70px; /* To offset the fixed header */
+}
+
+.showcase .showcase-logo {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.showcase h1 {
+    margin-top: 0;
+    font-size: 55px;
+    margin-bottom: 10px;
+}
+
+.showcase p {
+    font-size: 20px;
+}
+
+.main-content {
+    padding: 20px;
+    background: var(--color-background-light);
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+    color: var(--color-text-dark);
+}
+
+.main-content h2 {
+    color: var(--color-accent);
+    font-size: 24px;
+}
+
+.main-content p {
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--color-background-light);
+    color: var(--color-text);
+    margin-top: 20px;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+footer .footer-logo {
+    height: 50px;
+    margin-bottom: 10px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 18px;
+}
+
+@media (max-width: 768px) {
+    header h1, header nav {
+        float: none;
+        text-align: center;
+    }
+    
+    header nav {
+        margin-top: 5px;
+    }
+    
+    header li {
+        display: block;
+        padding: 10px 0;
+    }
+    
+    .showcase {
+        margin-top: 100px; /* Adjusted for the fixed header on smaller screens */
+    }
+}
