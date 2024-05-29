@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="lv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pamat informācija - Henrijs Beķeris</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+</head>
+<body>
+    <header id="main-header" data-aos="fade-down">
+        <div class="container">
+            <img src="images/henrijs_bekeris_logo_balts.png" alt="Henrijs Beķeris Logo" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Sākums</a></li>
+                    <li><a href="pamat-informacija.html">Pamat informācija</a></li>
+                    <li><a href="izglitiba.html">Izglītība</a></li>
+                    <li><a href="hobiji.html">Hobiji</a></li>
+                    <li><a href="prasmes.html">Prasmes</a></li>
+                    <li><a href="kontaktinformacija.html">Kontaktinformācija</a></li>
+                    <li><a href="milakas-speles.html">Mīļākās spēles</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="main-content container" data-aos="fade-up">
+        <h2>Pamat informācija</h2>
+        <p>Mani sauc Henrijs Beķeris un esmu datorsistēmu tehniķis. Dzīvoju Liepājas Valsts tehnikuma dienestviesnīcā, Vānes ielā 405 istabā.</p>
+        <div id="map" style="height: 400px; width: 100%;"></div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <img src="images/henrijs_bekeris_logo_balts.png" alt="Henrijs Beķeris Logo" class="footer-logo">
+            <p>Henrijs Beķeris™</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        function initMap() {
+            var liepaja = {lat: 56.5047, lng: 21.0108}; // Liepājas koordinātas
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: liepaja,
+                styles: [
+                    {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
+                    {elementType: 'labels.text.stroke', stylers: [{color: '#242f3e'}]},
+                    {elementType: 'labels.text.fill', stylers: [{color: '#746855'}]},
+                    {
+                        featureType: 'administrative.locality',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#d59563'}]
+                    },
+                    {
+                        featureType: 'poi',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#d59563'}]
+                    },
+                    {
+                        featureType: 'poi.park',
+                        elementType: 'geometry',
+                        stylers: [{color: '#263c3f'}]
+                    },
+                    {
+                        featureType: 'poi.park',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#6b9a76'}]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'geometry',
+                        stylers: [{color: '#38414e'}]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'geometry.stroke',
+                        stylers: [{color: '#212a37'}]
+                    },
+                    {
+                        featureType: 'road',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#9ca5b3'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry',
+                        stylers: [{color: '#746855'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'geometry.stroke',
+                        stylers: [{color: '#1f2835'}]
+                    },
+                    {
+                        featureType: 'road.highway',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#f3d19c'}]
+                    },
+                    {
+                        featureType: 'transit',
+                        elementType: 'geometry',
+                        stylers: [{color: '#2f3948'}]
+                    },
+                    {
+                        featureType: 'transit.station',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#d59563'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'geometry',
+                        stylers: [{color: '#17263c'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.fill',
+                        stylers: [{color: '#515c6d'}]
+                    },
+                    {
+                        featureType: 'water',
+                        elementType: 'labels.text.stroke',
+                        stylers: [{color: '#17263c'}]
+                    }
+                ]
+            });
+            var marker = new google.maps.Marker({
+                position: liepaja,
+                map: map,
+                title: 'Liepājas Valsts tehnikuma dienestviesnīca'
+            });
+        }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+</body>
+</html>

@@ -1,3 +1,11 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Root variables */
 :root {
     --color-primary: #1e3a8a;
     --color-secondary: #2563eb;
@@ -5,25 +13,28 @@
     --color-background: #111827;
     --color-background-light: rgba(255, 255, 255, 0.1);
     --color-text: #f4f4f9;
-    --color-text-dark: #333;
+    --color-text-dark: #f4f4f9;
 }
 
+/* Body styles */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
     background-color: var(--color-background);
     color: var(--color-text);
+    margin: 0;
+    padding: 0;
 }
 
+/* Container styles */
 .container {
     width: 85%;
     margin: auto;
     overflow: hidden;
 }
 
+/* Header styles */
 header {
-    background: var(--color-primary);
+    background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
     color: var(--color-text);
     padding: 20px 0;
     position: fixed;
@@ -34,27 +45,12 @@ header {
     align-items: center;
     justify-content: space-between;
     transition: all 0.3s ease-in-out;
-    opacity: 0;
-    transition: opacity 1s ease-in-out; /* Fade-in effect */
-}
-
-header.loaded {
-    opacity: 1; /* When loaded */
-}
-
-header.small {
-    padding: 10px 0;
-    background: var(--color-primary);
 }
 
 header .logo {
     height: 50px;
     margin-left: 20px;
     transition: height 0.3s ease-in-out;
-}
-
-header.small .logo {
-    height: 40px;
 }
 
 header nav {
@@ -82,6 +78,38 @@ header a:hover {
     color: var(--color-accent);
 }
 
+/* Main content styles */
+.main-content {
+    padding-top: 80px; /* Adjust this value to match the height of your header */
+    padding-bottom: 40px; /* Adjust this value to match the height of your footer */
+    background: var(--color-background-light);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: var(--color-text);
+}
+
+.main-content h2 {
+    color: var(--color-accent);
+    font-size: 24px;
+}
+
+.main-content p {
+    line-height: 1.6;
+    font-size: 18px;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 20px;
+}
+
+footer img.footer-logo {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+/* Additional styles */
 .showcase {
     min-height: 100vh;
     background: linear-gradient(to right, var(--color-primary), var(--color-secondary)), url('insert me') no-repeat center center/cover;
@@ -109,63 +137,22 @@ header a:hover {
     font-size: 20px;
 }
 
-.main-content {
+/* Additional main content styles */
+.section-box {
+    background-color: #fff;
     padding: 20px;
-    background: var(--color-background-light);
-    margin-top: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
     margin-bottom: 20px;
-    backdrop-filter: blur(10px);
-    color: var(--color-text-dark);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.main-content h2 {
-    color: var(--color-accent);
-    font-size: 24px;
-}
-
-.main-content p {
-    line-height: 1.6;
-    font-size: 18px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: var(--color-background-light);
-    color: var(--color-text);
-    margin-top: 20px;
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-}
-
-footer .footer-logo {
-    height: 50px;
+.section-box h3 {
+    color: var(--color-primary);
+    font-size: 20px;
     margin-bottom: 10px;
 }
 
-footer p {
-    margin: 0;
-    font-size: 18px;
-}
-
-@media (max-width: 768px) {
-    header h1, header nav {
-        float: none;
-        text-align: center;
-    }
-    
-    header nav {
-        margin-top: 5px;
-    }
-    
-    header li {
-        display: block;
-        padding: 10px 0;
-    }
-    
-    .showcase {
-        margin-top: 100px; /* Adjusted for the fixed header on smaller screens */
-    }
+.section-box p {
+    font-size: 16px;
+    line-height: 1.5;
 }
